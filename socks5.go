@@ -1,7 +1,7 @@
 package socks5
 
 import (
-	"socks5/utils"
+	"github.com/wuli07101/socks5/utils"
 	"encoding/binary"
 	"errors"
 	"io"
