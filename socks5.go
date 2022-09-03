@@ -159,8 +159,6 @@ func (c *Socks5) doConnect(client net.Conn, command uint8) (proxyConn net.Conn, 
 		return nil, err
 	}
 
-	log.Println("host: ", host)
-
 	var port uint16
 	binary.Read(client, binary.BigEndian, &port)
 	// connect to host
@@ -170,7 +168,7 @@ func (c *Socks5) doConnect(client net.Conn, command uint8) (proxyConn net.Conn, 
 		log.Println(err)
 		return nil, err
 	}
-	log.Println("sendReply")
+	
 	c.sendReply(client, succeeded)
 
 	return proxyConn, err
