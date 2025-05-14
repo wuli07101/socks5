@@ -163,7 +163,7 @@ func (c *Socks5) doConnect(client net.Conn, command uint8) (proxyConn net.Conn, 
 	binary.Read(client, binary.BigEndian, &port)
 	// connect to host
 	proxyConn, err =net.DialTimeout("tcp", net.JoinHostPort(host, strconv.Itoa(int(port))),time.Duration(3) * time.Second)
-	log.Println("host: ", net.JoinHostPort(host, strconv.Itoa(int(port))))
+	//log.Println("host: ", net.JoinHostPort(host, strconv.Itoa(int(port))))
 	if err != nil {
 		log.Println(err)
 		return nil, err
